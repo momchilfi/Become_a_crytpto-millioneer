@@ -84,3 +84,13 @@ class StartScreen(QMainWindow):
         self.quiz_window = QuizWindow()
         self.quiz_window.show()
         self.close()
+        
+    self.btn_easy = QPushButton('ЛЕСНО')
+    self.btn_hard = QPushButton('ТРУДНО')
+    self.btn_easy.clicked.connect(lambda: self.start_game('easy'))
+    self.btn_hard.clicked.connect(lambda: self.start_game('hard'))
+
+def start_game(self, mode):
+    self.quiz = QuizWindow(mode=mode)
+    self.quiz.show()
+    self.close()
